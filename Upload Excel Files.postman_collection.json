@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "9c89d032-7072-46ad-9f74-00f84bea14b1",
+		"name": "Upload Excel Files",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23547020"
+	},
+	"item": [
+		{
+			"name": "Db to Excel",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/transactions/export-to-excel?startDate=1654475570000&endDate=1654475570000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"transactions",
+						"export-to-excel"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "1654475570000"
+						},
+						{
+							"key": "endDate",
+							"value": "1654475570000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excel to Db",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/gerta/OneDrive/Desktop/upload-file-excel/Book1.xlsx"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/transactions/import-to-db",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"transactions",
+						"import-to-db"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
